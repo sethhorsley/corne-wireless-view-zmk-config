@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+LAYERS="Base Lower Raise Adjust Fun"
+
+draw() {
+	keymap -c img/config.yaml parse -z config/"$1".keymap >./img/"$1".yaml
+	keymap -c img/config.yaml draw ./img/"$1".yaml >./img/"$1".svg
+}
+
+
+draw corne # "-k chocofi"
